@@ -1,6 +1,4 @@
 "use client";
-
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 import {
@@ -38,14 +36,17 @@ const SocialLinks = [
   {
     href: "https://github.com/geekStories",
     icon: <AiOutlineGithub size={SocialIconSize} />,
+    content: "github",
   },
   {
     href: "https://www.linkedin.com/in/damon-pitkethley/",
     icon: <AiOutlineLinkedin size={SocialIconSize} />,
+    content: "linkedin",
   },
   {
     href: "https://twitter.com/geek_stories",
     icon: <AiOutlineTwitter size={SocialIconSize} />,
+    content: "twitter",
   },
 ];
 
@@ -54,29 +55,29 @@ export default function Sidebar() {
   const router = useRouter();
 
   return (
-    <div className="fixed left-0 h-screen p-2 items-center flex top-4 flex-col">
-      <div className="flex flex-col">
+    <div className="fixed left-0 h-screen ml-2 gap-3 flex top-2 flex-col">
+      <div className="flex flex-col gap-2">
         {NavLinks.map((link, index) => (
           <button
             key={`nav_${index}`}
             onClick={() => router.push(link.href)}
             className={`${
               path === link.href
-                ? "bg-slate-100 shadow rounded-full opacity-100 transform active:scale-75"
-                : "opacity-60"
-            } p-2 transition-all ease-in-out delay-75`}
+                ? "bg-slate-100 shadow rounded-full opacity-100 transform active:scale-90"
+                : "opacity-70"
+            } p-2 transition-all ease-in-out delay-75 hover:bg-slate-100 hover:shadow hover:rounded-full hover:opacity-100`}
           >
             {link.icon}
           </button>
         ))}
       </div>
 
-      <ul className="flex flex-col">
+      <ul className="flex flex-col gap-2 items-center">
         {SocialLinks.map((link, index) => (
-          <li key={`social_${index}`} className="p-1">
-            <Link href={link.href} target="_blank">
+          <li key={`social_${index}`}>
+            <a href={link.href} target="_blank">
               {link.icon}
-            </Link>
+            </a>
           </li>
         ))}
       </ul>

@@ -17,7 +17,7 @@ export default function Home() {
     >
       <h1 className="text-3xl">Hi,</h1>
       <h2 className="text-3xl">
-        I'm <span className="text-blue-600 underline">Damon</span>.
+        Im <span className="text-blue-600 underline">Damon</span>.
       </h2>
       <p className="text-xl">A Full-Stack Web Developer /</p>
       <p className="text-xl">Hobbyist Game Developer</p>
