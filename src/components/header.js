@@ -6,12 +6,13 @@ import {
   AiOutlineLinkedin,
   AiOutlineTwitter,
 } from "react-icons/ai";
+
 import { MdOutlineMailOutline } from "react-icons/md";
 import { CgWebsite } from "react-icons/cg";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { GrGamepad } from "react-icons/gr";
 
-const NavIconSize = "2em";
+const NavIconSize = "1.5em";
 const NavLinks = [
   {
     href: "/",
@@ -31,7 +32,7 @@ const NavLinks = [
   },
 ];
 
-const SocialIconSize = "1.8em";
+const SocialIconSize = "1.4em";
 const SocialLinks = [
   {
     href: "https://github.com/geekStories",
@@ -55,9 +56,9 @@ export default function Sidebar() {
   const router = useRouter();
 
   return (
-    <div className="fixed left-0 h-screen ml-2 gap-3 flex top-2 flex-col">
-      <div className="flex flex-col gap-2">
-        {NavLinks.map((link, index) => (
+    <ul className="fixed top-0 flex justify-evenly h-16 sm:justify-center sm:gap-4 items-center w-full pt-1">
+      {NavLinks.map((link, index) => (
+        <li>
           <button
             key={`nav_${index}`}
             onClick={() => router.push(link.href)}
@@ -69,18 +70,15 @@ export default function Sidebar() {
           >
             {link.icon}
           </button>
-        ))}
-      </div>
-
-      <ul className="flex flex-col gap-2 items-center">
-        {SocialLinks.map((link, index) => (
-          <li key={`social_${index}`}>
-            <a href={link.href} target="_blank">
-              {link.icon}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
+        </li>
+      ))}
+      {SocialLinks.map((link, index) => (
+        <li key={`social_${index}`}>
+          <a className="p-2" href={link.href} target="_blank">
+            {link.icon}
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 }

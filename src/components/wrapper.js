@@ -18,7 +18,7 @@ export default function Wrapper({ children, className }) {
         opacity: 0,
         y: 20,
       }}
-      className={classNames(className, "min-h-screen")}
+      className={classNames(className, "min-h-screen pt-16 lg:px-16")}
     >
       {children}
     </motion.div>

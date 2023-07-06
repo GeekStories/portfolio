@@ -18,11 +18,10 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-    -webkit-tap-highlight-color: transparent !important;
+  background: rgb(var(--background-start-rgb));
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.externalLink {
+  @apply underline text-blue-400
 }

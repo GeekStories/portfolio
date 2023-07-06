@@ -1,13 +1,13 @@
 "use client";
 import "./globals.css";
+import Header from "@/components/header";
 import { AnimatePresence } from "framer-motion";
-import Sidebar from "@/components/sidebar";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="h-screen">
-        <Sidebar />
+        <Header />
         <AnimatePresence mode="wait">{children}</AnimatePresence>
       </body>
     </html>
