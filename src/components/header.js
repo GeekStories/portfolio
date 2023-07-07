@@ -58,9 +58,8 @@ export default function Sidebar() {
   return (
     <ul className="fixed top-0 flex justify-evenly h-16 sm:justify-center sm:gap-4 items-center w-full pt-1">
       {NavLinks.map((link, index) => (
-        <li>
+        <li key={`nav_${index}`}>
           <button
-            key={`nav_${index}`}
             onClick={() => router.push(link.href)}
             className={`${
               path === link.href
