@@ -23,5 +23,13 @@ body {
 }
 
 .externalLink {
-  @apply underline text-blue-400
+  @apply underline text-blue-400;
+}
+
+td {
+  @apply m-auto;
+}
+
+tr {
+  @apply grid grid-cols-5;
 }
