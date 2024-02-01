@@ -61,7 +61,7 @@ export default function Page() {
                   ygoprodeck
                 </a>{" "}
                 and stored in my database for use here. Card images are
-                unavaliable because I don't have anywhere to store and host 10k+
+                unavaliable because I don&apos;t have anywhere to store and host 10k+
                 images currently. So a placeholder is used in the meantime.
               </p>
               <a
