@@ -5,13 +5,14 @@ export default function Page({ searchParams }) {
 
   return (
     <div className="mt-16 flex flex-col gap-5 justify-center text-center text-2xl font-bold font-serif">
-      <h1 className="text-5xl font-thin">Contact Me!</h1>
       <form
         action={SubmitForm}
-        className="flex flex-col gap-5 shadow-lg p-4 w-11/12 sm:w-9/12 lg:w-1/2 mx-auto bg-slate-400 rounded"
+        className="flex flex-col gap-5 w-full p-2 sm:w-3/4 lg:w-1/2 mx-auto"
       >
         <div className="flex flex-col text-left">
-          <label htmlFor="email">Email</label>
+          <label className="inputLabel" htmlFor="email">
+            Email
+          </label>
           <input
             className="formInput"
             defaultValue={email}
@@ -22,7 +23,9 @@ export default function Page({ searchParams }) {
         </div>
 
         <div className="flex flex-col text-left">
-          <label htmlFor="name">Name</label>
+          <label className="inputLabel" htmlFor="name">
+            Name
+          </label>
           <input
             className="formInput"
             defaultValue={name}
@@ -33,8 +36,11 @@ export default function Page({ searchParams }) {
         </div>
 
         <div className="flex flex-col text-left">
-          <label htmlFor="query">Message</label>
+          <label className="inputLabel" htmlFor="query">
+            Message
+          </label>
           <textarea
+            className="font-medium p-2 rounded border-none focus:outline focus:outline-2 focus:outline-blue-500 focus:ring-0"
             defaultValue={message}
             rows={5}
             name="message"
@@ -52,7 +58,10 @@ export default function Page({ searchParams }) {
             Message sent successfully! I will be in contact soon :)
           </p>
         )}
-        <button className="projectLink" type="submit">
+        <button
+          className="w-full font-medium sm:w-3/4 lg:w-1/2 mx-auto border-blue-400 border-2 text-blue-900 rounded py-2 hover:cursor-pointer"
+          type="submit"
+        >
           Send Message
         </button>
       </form>
