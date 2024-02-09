@@ -1,30 +1,38 @@
+"use server";
+
 import pool from "@/db";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { z } from "zod";
 
-export async function SubmitForm(formData: FormData) {
-  "use server";
+interface ContactForm {
+  name: string;
+  email: string;
+  message: string;
+}
 
-  const parsedData = {
+const schema = z.object({
+  name: z.string().min(1),
+  email: z.string().email(),
+  message: z.string().min(1),
+});
+
+export async function SubmitForm(prevState: any, formData: FormData) {
+  const data = schema.parse({
     name: formData.get("name"),
     email: formData.get("email"),
     message: formData.get("message"),
-  };
-
-  const name = parsedData.name.toString();
-  const email = parsedData.email.toString();
-  const message = parsedData.message.toString();
+  });
 
   try {
     await pool.query(
       "INSERT INTO messages(name, email, message) VALUES($1, $2, $3)",
-      [name, email, message]
+      [data.name, data.email, data.message]
     );
+
+    revalidatePath("/contact");
+    return { message: "Message sent successfully" };
   } catch (error) {
-    console.log(error);
-    return redirect(
-      `/contact?sent=failed&email=${email}&name=${name}&message=${message}`
-    );
-  } finally {
-    return redirect("/contact?sent=success");
+    return { message: "Failed to send message. Refresh and try again." };
   }
 }

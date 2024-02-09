@@ -11,6 +11,7 @@ import {
 import { MdOutlineMailOutline } from "react-icons/md";
 import { CgWebsite } from "react-icons/cg";
 import { BiHomeAlt2 } from "react-icons/bi";
+import { SlGameController } from "react-icons/sl";
 
 const NavIconSize = "1.5em";
 const SocialIconSize = "1.4em";
@@ -23,6 +24,10 @@ const NavLinks = [
   {
     href: "/projects",
     icon: <CgWebsite size={NavIconSize} />,
+  },
+  {
+    href: "/gaming",
+    icon: <SlGameController size={NavIconSize} />,
   },
   {
     href: "/contact",
