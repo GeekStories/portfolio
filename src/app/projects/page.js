@@ -7,37 +7,49 @@ export default function Page() {
         <h1 className="sectionTitle">Games</h1>
         <div className="projectsBoxWrapper">
           <div className="gameProject">
-            <h1 className="font-bold text-xl">Web Tycoon</h1>
+            <h1 className="gameTitle">Idle Web Tycoon</h1>
             <a
               className="projectLink"
               href="https://geekstories.itch.io/web-tycoon"
             >
               Check it out on Itch.io
             </a>
-            <p>Description</p>
+            <p className="gameDescription">
+              Become a web monopoly. Create a website, attract users and sell
+              many ads
+            </p>
           </div>
           <div className="gameProject">
-            <h1 className="font-bold text-xl" p>
+            <h1 className="gameTitle" p>
               Idle Realtor
             </h1>
             <a className="projectLink" href="#">
               Not hosted at the moment :(
             </a>
-            <p>Description</p>
+            <p className="gameDescription">
+              Take your shot at becoming a very wealthy realestate agent. Buy
+              property, lease it out, renovate and sell.
+            </p>
           </div>
           <div className="gameProject">
-            <h1 className="font-bold text-xl">The Yard</h1>
+            <h1 className="gameTitle">The Yard</h1>
             <a className="projectLink" href="#">
               Not hosted at the moment :(
             </a>
-            <p>Description</p>
+            <p className="gameDescription">
+              You own a car yard. You take in junk cars, fix &apos;em up, move &apos;em on
+              and make a quick buck.
+            </p>
           </div>
           <div className="gameProject">
-            <h1 className="font-bold text-xl">Typewriter</h1>
+            <h1 className="gameTitle">Typewriter</h1>
             <a className="projectLink" href="#">
               Not hosted at the moment :(
             </a>
-            <p>Description</p>
+            <p className="gameDescription">
+              Ever wanted to sell a word? You can here! Buy the alphabet and
+              make a profit.
+            </p>
           </div>
         </div>
       </div>
@@ -61,8 +73,8 @@ export default function Page() {
                   ygoprodeck
                 </a>{" "}
                 and stored in my database for use here. Card images are
-                unavaliable because I don&apos;t have anywhere to store and host 10k+
-                images currently. So a placeholder is used in the meantime.
+                unavaliable because I don&apos;t have anywhere to store and host
+                10k+ images currently. So a placeholder is used in the meantime.
               </p>
               <a
                 className="projectLink"
