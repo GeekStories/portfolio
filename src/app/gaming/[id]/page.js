@@ -11,12 +11,13 @@ export async function generateMetadata({ params }) {
   const { id } = params;
   const { rows: posts } = await pool.query("SELECT * FROM posts WHERE id=$1", [id]);
   const post = posts[0];
+  const keywords = post?.tags.length > 0 ? post?.tags : "";
   return {
     title: post?.title,
     authors: {
       name: "Damon Pitkethley",
     },
-    keyword: post?.tags.split(","),
+    keyword: keywords,
   };
 }
 
