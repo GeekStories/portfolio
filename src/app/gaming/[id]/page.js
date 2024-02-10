@@ -1,5 +1,7 @@
 import pool from "@/db";
 
+import { redirect } from "next/navigation";
+
 export async function generateStaticParams() {
   const { rows: posts } = await pool.query("SELECT id FROM posts");
   return posts.map((post) => ({
@@ -18,12 +20,17 @@ export async function generateMetadata({ params }) {
     authors: {
       name: "Damon Pitkethley",
     },
+    keywords: post?.tags,
   };
 }
 
 export default async function Page({ params }) {
   const { id } = params;
   const { rows } = await pool.query("SELECT * FROM posts WHERE id=$1", [id]);
+
+  if (rows.length === 0) {
+    return redirect("/gaming");
+  }
 
   const post = rows[0];
 
