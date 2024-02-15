@@ -1,5 +1,5 @@
 import pool from "@/db";
-
+import GetPost from "@/utils/GetPost";
 import { redirect } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -11,10 +11,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { id } = params;
-  const { rows: posts } = await pool.query("SELECT * FROM posts WHERE id=$1", [
-    id,
-  ]);
-  const post = posts[0];
+  const post = await GetPost(id);
   return {
     title: post?.title,
     authors: {
@@ -26,13 +23,11 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
   const { id } = params;
-  const { rows } = await pool.query("SELECT * FROM posts WHERE id=$1", [id]);
+  const post = await GetPost(id);
 
-  if (rows.length === 0) {
-    return redirect("/gaming");
+  if (!post) {
+    return redirect("/blog");
   }
-
-  const post = rows[0];
 
   function getMarkup() {
     return { __html: post.content };

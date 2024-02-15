@@ -66,6 +66,13 @@ body {
   @apply text-xl font-mono;
 }
 
+.navLink {
+  @apply p-2 transition-all ease-in-out delay-75 hover:bg-slate-100 hover:shadow hover:rounded-full hover:opacity-100;
+}
+.navLinkSelected {
+  @apply bg-slate-100 shadow rounded-full opacity-100 transform active:scale-90;
+}
+
 td {
   @apply m-auto;
 }
