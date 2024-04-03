@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 import Header from "@/components/header";
 
 export default function RootLayout({ children }) {

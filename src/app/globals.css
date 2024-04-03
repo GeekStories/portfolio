@@ -73,6 +73,14 @@ body {
   @apply bg-slate-100 shadow rounded-full opacity-100 transform active:scale-90;
 }
 
+.ql-syntax {
+  @apply bg-amber-50 rounded-lg p-3;
+}
+
+h2 {
+  @apply font-bold text-2xl;
+}
+
 td {
   @apply m-auto;
 }

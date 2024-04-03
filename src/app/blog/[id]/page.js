@@ -1,6 +1,7 @@
 import pool from "@/db";
 import GetPost from "@/utils/GetPost";
 import { redirect } from "next/navigation";
+import "highlight.js/styles/vs.css";
 
 export async function generateStaticParams() {
   const { rows: posts } = await pool.query("SELECT id FROM posts");
@@ -30,7 +31,9 @@ export default async function Page({ params }) {
   }
 
   function getMarkup() {
-    return { __html: post.content };
+    return {
+      __html: post.content,
+    };
   }
 
   return (
@@ -38,7 +41,7 @@ export default async function Page({ params }) {
       <h1 className="text-3xl font-bold">{post.title}</h1>
       <p className="italic text-lg">Posted: {post.createdat.toDateString()}</p>
       <div
-        className="border-2 border-gray-300 p-4 rounded"
+        className="border-2 border-gray-400 p-4 rounded"
         dangerouslySetInnerHTML={getMarkup()}
       ></div>
       <div>tags: {post.tags}</div>
