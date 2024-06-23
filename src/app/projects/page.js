@@ -48,11 +48,13 @@ export default function Page() {
               <p className="text-neutral-900 font-mono rounded border-[1px] border-neutral-900 bg-neutral-50 bg-opacity-30 backdrop-blur-sm p-1 shadow-lg">
                 This is a simple Paper Scissors Rock game that you can play
                 against the computer. This was the final project as part of my
-                L6 diploma in 2022. We had to integrate a provided model into a React
-                web app, and usign the web cam detect a users hand pose.
-
-                The model is a little funky, try to keep just your hand in the frame, but don't worry too much. As long as it's a clear shot.
-                Check the poses by turning off the camera option in the top right (if not already disabled). The poses in the images are what the model looks for.
+                L6 diploma in 2022. We had to integrate a provided model into a
+                React web app, and usign the web cam detect a users hand pose.
+                The model is a little funky, try to keep just your hand in the
+                frame, but dont worry too much. As long as its a clear shot.
+                Check the poses by turning off the camera option in the top
+                right (if not already disabled). The poses in the images are
+                what the model looks for.
               </p>
               <a
                 className="projectLink"
