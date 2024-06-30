@@ -28,10 +28,10 @@ function SubmitButton() {
 
   if (pending)
     return (
-      <p className="flex gap-5 items-center justify-center">
+      <span className="flex gap-5 items-center justify-center">
         Sending message{" "}
         <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-900"></div>
-      </p>
+      </span>
     );
 }
 
@@ -80,6 +80,13 @@ export default function Form() {
           rows={5}
           minLength={1}
           required
+        />
+
+        <input
+          id="secondaryEmail"
+          name="secondaryEmail"
+          type="text"
+          style={{ display: "none" }}
         />
       </div>
       {!state?.message && <SubmitButton />}
