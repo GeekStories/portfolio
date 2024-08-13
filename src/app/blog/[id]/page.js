@@ -39,7 +39,7 @@ export default async function Page({ params }) {
   return (
     <div className="w-1/2 mx-auto flex flex-col gap-5">
       <h1 className="text-3xl font-bold">{post.title}</h1>
-      <p className="italic text-lg">Posted: {post.createdat.toDateString()}</p>
+      <p className="italic text-lg">Posted: {post.created.toDateString()}</p>
       <div
         className="border-2 border-gray-400 p-4 rounded"
         dangerouslySetInnerHTML={getMarkup()}
