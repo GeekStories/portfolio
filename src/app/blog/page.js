@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default async function Page() {
   const { rows: posts } = await pool.query(
-    "SELECT * FROM posts ORDER BY createdat LIMIT 10"
+    "SELECT * FROM posts ORDER BY created LIMIT 10"
   );
 
   return (
@@ -19,7 +19,7 @@ export default async function Page() {
               <span className="line-clamp-1 text-lg">{post.title}</span>
               <hr className="h-1 mr-auto bg-gray-400 w-1/3 group-hover:w-full group-hover:bg-gray-500 transition-all delay-75 ease-in-out rounded" />
               <span className="text-sm text-right">
-                {post.createdat.toDateString()}
+                {post.created.toDateString()}
               </span>
             </Link>
           ))}

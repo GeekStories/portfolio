@@ -10,31 +10,19 @@ export default function Page() {
           src="https://itch.io/embed/2177443?dark=true"
           width="552"
           height="167"
-        >
-          <a href="https://geekstories.itch.io/web-tycoon">
-            Web Tycoon by GeekStories
-          </a>
-        </iframe>
+        ></iframe>
         <iframe
           frameborder="0"
           src="https://itch.io/embed/2634398?dark=true"
           width="552"
           height="167"
-        >
-          <a href="https://geekstories.itch.io/typewriter">
-            Typewriter by GeekStories
-          </a>
-        </iframe>
+        ></iframe>
         <iframe
           frameborder="0"
           src="https://itch.io/embed/2772991?linkback=true&amp;bg_color=2f2f2f&amp;fg_color=ffffff&amp;link_color=000000&amp;border_color=585858"
           width="552"
           height="167"
-        >
-          <a href="https://geekstories.itch.io/terminal-controller">
-            Terminal Controller by GeekStories
-          </a>
-        </iframe>
+        ></iframe>
       </div>
 
       <div className="projectSectionBody">
