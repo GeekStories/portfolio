@@ -8,7 +8,7 @@ export default function Header() {
       <Script
         defer
         src="/script.js"
-        data-website-id="391d14f2-956d-489c-a5c1-452c3ed09f41"
+        data-website-id="3703c958-7698-470e-863f-686da6cb7a81"
       ></Script>
     </head>
   );
