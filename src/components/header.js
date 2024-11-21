@@ -1,11 +1,10 @@
 "use client";
 
 import Script from "next/script";
-import Head from "next/head";
 
 export default function Header() {
   return (
-    <Head>
+    <head>
       <Script
         defer
         src="/script.js"
@@ -23,6 +22,6 @@ export default function Header() {
         async
         defer
       ></Script>
-    </Head>
+    </head>
   );
 }
