@@ -3,6 +3,8 @@
 import { useActionState } from "react";
 import { SubmitForm } from "@/utils/SubmitForm";
 
+export const dynamic = "auto";
+
 const initialState = {
   subject: "",
   email: "",

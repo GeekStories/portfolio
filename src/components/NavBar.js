@@ -25,10 +25,6 @@ const NavLinks = [
     href: "/blog",
     icon: <CgFeed size={NavIconSize} />,
   },
-  {
-    href: "/contact",
-    icon: <SiMinutemailer size={NavIconSize} />,
-  },
 ];
 const SocialLinks = [
   {
@@ -68,6 +64,10 @@ export default function NavBar() {
           {link.icon}
         </Link>
       ))}
+
+      <a href="/contact" className="navLink">
+        <SiMinutemailer size={NavIconSize} />
+      </a>
 
       {SocialLinks.map((link, index) => (
         <a
