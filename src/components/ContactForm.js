@@ -3,8 +3,6 @@
 import { useActionState } from "react";
 import { SubmitForm } from "@/utils/SubmitForm";
 
-export const dynamic = "auto";
-
 const initialState = {
   subject: "",
   email: "",
@@ -96,10 +94,7 @@ export default function Form() {
           style={{ display: "none" }}
         />
       </FormItem>
-      <div
-        className="frc-captcha mx-auto"
-        data-sitekey={process.env.NEXT_PUBLIC_FRIENDLY_SITE_KEY}
-      ></div>
+
       {!state?.message && <SubmitButton pending={isPending} />}
       {state?.message && state.message}
     </form>
