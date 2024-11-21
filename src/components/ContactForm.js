@@ -1,24 +1,19 @@
 "use client";
 
-// @ts-expect-error
-import { useFormStatus } from "react-dom";
-// @ts-expect-error
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 import { SubmitForm } from "@/utils/SubmitForm";
 
 const initialState = {
-  name: "",
+  subject: "",
   email: "",
   message: "",
 };
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
-
+function SubmitButton({ pending }) {
   if (!pending)
     return (
       <button
-        className="w-full font-medium sm:w-3/4 lg:w-1/2 mx-auto border-blue-400 border-2 text-blue-900 rounded py-2 hover:cursor-pointer"
+        className="w-full font-medium sm:w-3/4 lg:w-1/3 mx-auto border-neutral-700 border-2 text-neutral-700 rounded-full py-2 hover:cursor-pointer"
         type="submit"
         aria-disabled={pending}
       >
@@ -35,49 +30,58 @@ function SubmitButton() {
     );
 }
 
+function FormItem({ children }) {
+  return <div className="flex flex-col text-left">{children}</div>;
+}
+
 export default function Form() {
-  const [state, formAction] = useFormState(SubmitForm, initialState);
+  const [state, formAction, isPending] = useActionState(
+    SubmitForm,
+    initialState
+  );
 
   return (
     <form
       action={formAction}
-      className="flex flex-col gap-5 w-full p-2 sm:w-3/4 lg:w-1/2 mx-auto"
+      className="flex flex-col gap-5 w-full p-8 sm:w-3/4 lg:w-1/2 mx-auto text-[1.2rem] bg-white"
     >
-      <div className="flex flex-col text-left">
+      <h1 className="text-left text-4xl text-blue-400">Get In touch</h1>
+      <FormItem>
         <label className="inputLabel" htmlFor="email">
           Email
         </label>
         <input
           id="email"
           name="email"
+          placeholder="name@email.com"
           className="formInput"
           type="email"
           required
         />
-      </div>
-
-      <div className="flex flex-col text-left">
-        <label className="inputLabel" htmlFor="name">
-          Name
+      </FormItem>
+      <FormItem>
+        <label className="inputLabel" htmlFor="subject">
+          Subject
         </label>
         <input
-          id="name"
-          name="name"
+          id="subject"
+          name="subject"
+          placeholder="What are we talking about today"
           className="formInput"
           type="text"
           required
         />
-      </div>
-
-      <div className="flex flex-col text-left">
+      </FormItem>
+      <FormItem>
         <label className="inputLabel" htmlFor="message">
           Message
         </label>
         <textarea
           id="message"
           name="message"
-          className="font-medium p-2 rounded border-none focus:outline focus:outline-2 focus:outline-blue-500 focus:ring-0"
-          rows={5}
+          placeholder="Type your message here"
+          className="formInput"
+          rows={3}
           minLength={1}
           required
         />
@@ -85,11 +89,16 @@ export default function Form() {
         <input
           id="secondaryEmail"
           name="secondaryEmail"
+          className="formInput"
           type="text"
           style={{ display: "none" }}
         />
-      </div>
-      {!state?.message && <SubmitButton />}
+      </FormItem>
+      <div
+        className="frc-captcha mx-auto"
+        data-sitekey={process.env.NEXT_PUBLIC_FRIENDLY_SITE_KEY}
+      ></div>
+      {!state?.message && <SubmitButton pending={isPending} />}
       {state?.message && state.message}
     </form>
   );

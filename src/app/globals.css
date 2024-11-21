@@ -34,10 +34,6 @@ body {
   @apply text-3xl font-bold font-serif;
 }
 
-.projectSectionBody {
-  @apply flex flex-col gap-3;
-}
-
 .projectsBoxWrapper {
   @apply flex flex-wrap gap-5 w-full justify-center border-t-2 border-black p-2;
 }
@@ -47,7 +43,7 @@ body {
 }
 
 .formInput {
-  @apply p-2 text-lg rounded font-medium border-none focus:outline focus:outline-2 focus:outline-blue-500 focus:ring-0 bg-gray-50;
+  @apply p-2 rounded font-medium border-none focus:outline focus:outline-2 focus:outline-blue-500 focus:ring-0 bg-blue-50;
 }
 
 .inputLabel {

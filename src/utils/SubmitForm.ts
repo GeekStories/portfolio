@@ -5,24 +5,52 @@ import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 const schema = z.object({
-  name: z.string().min(1),
+  subject: z.string(),
   email: z.string().email(),
   message: z.string().min(1),
   secondaryEmail: z.string().optional(),
+  frc: z.string(),
 });
 
 export async function SubmitForm(prevState: any, formData: FormData) {
   const data = schema.parse({
-    name: formData.get("name"),
     email: formData.get("email"),
+    subject: formData.get("subject"),
     message: formData.get("message"),
     secondaryEmail: formData.get("secondaryEmail"),
+    frc: formData.get("frc-captcha-response"),
   });
 
+  console.log(data.frc);
+
   try {
+    const captchaVerify = await fetch(
+      `https://global.frcapi.com/api/v2/captcha/siteverify`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-Key": process.env.FRIENDLY_API_KEY,
+        },
+        body: JSON.stringify({
+          sitekey: process.env.NEXT_PUBLIC_FRIENDLY_SITE_KEY,
+          response: data.frc,
+        }),
+      }
+    );
+
+    const captchaResponse = await captchaVerify.json();
+    console.log(captchaResponse);
+    if (!captchaResponse.success) {
+      return {
+        message: "Failed to verify captcha. Refresh and try again!",
+        error: { message: "bad captcha" },
+      };
+    }
+
     await pool.query(
-      "INSERT INTO messages(name, email, message, secondaryemail) VALUES($1, $2, $3, $4)",
-      [data.name, data.email, data.message, data.secondaryEmail]
+      "INSERT INTO messages(subject, email, message, secondaryemail) VALUES($1, $2, $3, $4)",
+      [data.subject, data.email, data.message, data.secondaryEmail]
     );
 
     revalidatePath("/contact");
