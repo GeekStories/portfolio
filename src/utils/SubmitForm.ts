@@ -13,8 +13,8 @@ const schema = z.object({
 
 export async function SubmitForm(prevState: any, formData: FormData) {
   const data = schema.parse({
-    email: formData.get("email"),
     subject: formData.get("subject"),
+    email: formData.get("email"),
     message: formData.get("message"),
     secondaryEmail: formData.get("secondaryEmail"),
   });
