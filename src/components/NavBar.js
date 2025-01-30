@@ -7,6 +7,7 @@ import {
   AiOutlineLinkedin,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import { FaGraduationCap } from "react-icons/fa";
 
 import { CgFeed } from "react-icons/cg";
 import { SiMinutemailer } from "react-icons/si";
@@ -20,6 +21,10 @@ const NavLinks = [
   {
     href: "/projects",
     icon: <CgDisplayGrid size={NavIconSize} />,
+  },
+  {
+    href: "/edu",
+    icon: <FaGraduationCap size={NavIconSize} />
   },
   {
     href: "/blog",

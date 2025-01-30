@@ -15,7 +15,7 @@ function WebsiteCard({ title, link, description }) {
 export default function Page() {
   return (
     <div className="w-11/12 md:w-9/12 flex flex-col mx-auto gap-5 mt-16">
-      <h1 className="sectionTitle">Websites</h1>
+      {/* <h1 className="sectionTitle">Websites</h1>
       <div className="flex flex-wrap w-full justify-center gap-2 border-t-2 border-black p-2">
         <WebsiteCard
           title="Trades Folder"
@@ -27,7 +27,7 @@ export default function Page() {
           link="https://psr.damonpitkethley.com"
           description="A simple Paper Scissors Rock game vs the computer. This was the final project as part of my Level 6 diploma in 2022."
         />
-      </div>
+      </div> */}
 
       <h1 className="sectionTitle">Games</h1>
       <div className="projectsBoxWrapper">

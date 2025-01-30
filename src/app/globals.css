@@ -31,7 +31,7 @@ body {
 }
 
 .sectionTitle {
-  @apply text-3xl font-bold font-serif;
+  @apply text-3xl font-medium font-serif;
 }
 
 .projectsBoxWrapper {
