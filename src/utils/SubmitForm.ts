@@ -8,7 +8,7 @@ const schema = z.object({
   subject: z.string(),
   email: z.string().email(),
   message: z.string().min(1),
-  secondaryEmail: z.string().optional(),
+  title: z.string().optional(),
 });
 
 export async function SubmitForm(prevState: any, formData: FormData) {
@@ -16,14 +16,16 @@ export async function SubmitForm(prevState: any, formData: FormData) {
     subject: formData.get("subject"),
     email: formData.get("email"),
     message: formData.get("message"),
-    secondaryEmail: formData.get("secondaryEmail"),
+    title: formData.get("title"),
   });
 
   try {
-    await pool.query(
-      "INSERT INTO messages(subject, email, message, secondaryemail) VALUES($1, $2, $3, $4)",
-      [data.subject, data.email, data.message, data.secondaryEmail]
-    );
+    if(data.title != "") {
+      await pool.query(
+        "INSERT INTO messages(subject, email, message) VALUES($1, $2, $3)",
+        [data.subject, data.email, data.message]
+      );
+    }
 
     revalidatePath("/contact");
     return { message: "Message sent successfully" };

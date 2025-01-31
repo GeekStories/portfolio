@@ -13,7 +13,7 @@ function SubmitButton({ pending }) {
   if (!pending)
     return (
       <button
-        className="w-full font-medium sm:w-3/4 lg:w-1/3 mx-auto border-neutral-700 border-2 text-neutral-700 rounded-full py-2 hover:cursor-pointer"
+        className="w-full font-medium sm:w-3/4 lg:w-1/3 mx-auto border-neutral-700 border-2 text-neutral-700 py-2 focus:rounded-3xl focus:border-neutral-900 hover:cursor-pointer rounded-none hover:rounded-3xl transition-all delay-75 ease-in-out"
         type="submit"
         aria-disabled={pending}
       >
@@ -87,11 +87,12 @@ export default function Form() {
         />
 
         <input
-          id="secondaryEmail"
-          name="secondaryEmail"
-          className="formInput"
           type="text"
-          style={{ display: "none" }}
+          id="title"
+          name="title"
+          className="h-0"
+          tabIndex="-1"
+          autoComplete="off"
         />
       </FormItem>
 
