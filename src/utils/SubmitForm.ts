@@ -20,7 +20,7 @@ export async function SubmitForm(prevState: any, formData: FormData) {
   });
 
   try {
-    if(data.title != "") {
+    if(!data.title) {
       await pool.query(
         "INSERT INTO messages(subject, email, message) VALUES($1, $2, $3)",
         [data.subject, data.email, data.message]
