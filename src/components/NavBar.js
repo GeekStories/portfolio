@@ -24,7 +24,7 @@ const NavLinks = [
   },
   {
     href: "/edu",
-    icon: <FaGraduationCap size={NavIconSize} />
+    icon: <FaGraduationCap size={NavIconSize} />,
   },
   {
     href: "/blog",
@@ -54,36 +54,42 @@ export default function NavBar() {
   const path = usePathname();
 
   return (
-    <div className="flex justify-center gap-2 left-2 top-2 w-full p-2">
-      <Link
-        href="/"
-        className={`navLink ${path === "/" ? "navLinkSelected" : "opacity-70"}`}
-      >
-        <RiHomeLine size={NavIconSize} />
-      </Link>
-
-      {NavLinks.map((link, index) => (
+    <div className="flex flex-col w-1/3 mx-auto">
+      <div className="flex gap-2 justify-center border-b-[1px] p-2">
         <Link
-          key={`nav_${index}`}
-          href={link.href}
+          href="/"
           className={`navLink ${
-            path.includes(link.href) ? "navLinkSelected" : "opacity-70"
+            path === "/" ? "navLinkSelected" : "opacity-70"
           }`}
         >
-          {link.icon}
+          <RiHomeLine size={NavIconSize} />
         </Link>
-      ))}
 
-      {SocialLinks.map((link, index) => (
-        <a
-          key={`social_${index}`}
-          className="socialLink"
-          href={link.href}
-          target="_blank"
-        >
-          {link.icon}
-        </a>
-      ))}
+        {NavLinks.map((link, index) => (
+          <Link
+            key={`nav_${index}`}
+            href={link.href}
+            className={`navLink ${
+              path.includes(link.href) ? "navLinkSelected" : "opacity-70"
+            }`}
+          >
+            {link.icon}
+          </Link>
+        ))}
+      </div>
+
+      <div className="flex justify-center p-2">
+        {SocialLinks.map((link, index) => (
+          <a
+            key={`social_${index}`}
+            className="socialLink"
+            href={link.href}
+            target="_blank"
+          >
+            {link.icon}
+          </a>
+        ))}
+      </div>
     </div>
   );
 }

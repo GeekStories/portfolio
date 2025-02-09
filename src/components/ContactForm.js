@@ -13,7 +13,7 @@ function SubmitButton({ pending }) {
   if (!pending)
     return (
       <button
-        className="w-full font-medium sm:w-3/4 lg:w-1/3 mx-auto border-neutral-700 border-2 text-neutral-700 py-2 focus:rounded-3xl focus:border-neutral-900 hover:cursor-pointer rounded-none hover:rounded-3xl transition-all delay-75 ease-in-out"
+        className="w-full font-medium sm:w-3/4 lg:w-1/3 mx-auto border-neutral-700 border-2 text-neutral-700 py-2 focus:rounded-3xl focus:border-neutral-900 hover:cursor-pointer rounded-xl hover:rounded-3xl transition-all delay-0 ease-in-out"
         type="submit"
         aria-disabled={pending}
       >
@@ -43,9 +43,9 @@ export default function Form() {
   return (
     <form
       action={formAction}
-      className="flex flex-col gap-5 w-full p-8 sm:w-3/4 lg:w-1/2 mx-auto text-[1.2rem] bg-white"
+      className="flex flex-col gap-5 w-full p-8 sm:w-3/4 lg:w-1/2 mx-auto text-[1.2rem] bg-gray-50 shadow-lg "
     >
-      <h1 className="text-left text-4xl text-blue-400">Get In touch</h1>
+      <h1 className="text-left text-3xl text-blue-400">Get In touch</h1>
       <FormItem>
         <label className="inputLabel" htmlFor="email">
           Email
@@ -53,7 +53,7 @@ export default function Form() {
         <input
           id="email"
           name="email"
-          placeholder="name@email.com"
+          placeholder="johndoe@email.com"
           className="formInput"
           type="email"
           required
@@ -66,7 +66,7 @@ export default function Form() {
         <input
           id="subject"
           name="subject"
-          placeholder="What are we talking about today"
+          placeholder=""
           className="formInput"
           type="text"
           required
@@ -79,7 +79,7 @@ export default function Form() {
         <textarea
           id="message"
           name="message"
-          placeholder="Type your message here"
+          placeholder="Type your message here.."
           className="formInput"
           rows={3}
           minLength={1}
