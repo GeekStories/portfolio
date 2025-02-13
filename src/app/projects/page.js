@@ -2,11 +2,11 @@ import { BiSolidArrowToRight } from "react-icons/bi";
 
 function WebsiteCard({ title, link, linkText, description }) {
   return (
-    <div className="text-neutral-900 w-80 flex flex-col gap-2 p-2 ">
-      <h1 className="font-bold text-xl">{title}.</h1>
-      <a className="projectLink" href={link} target="_blank">
+    <div className="text-neutral-900 w-1/4 flex flex-col gap-2 p-2 ">
+      <h1 className="font-bold text-3xl underline"><a href={link} target="_blank">{title}</a></h1>
+      {/* <a className="projectLink" href={link} target="_blank">
         Visit {linkText.toLowerCase()} <BiSolidArrowToRight size="1rem" />
-      </a>
+      </a> */}
       <p className="text-neutral-900 font-mono p-1">{description}</p>
     </div>
   );
@@ -21,7 +21,7 @@ export default function Page() {
           title="Trades Folder"
           link="https://tradesfolder.com"
           linkText="tradesfolder.com"
-          description="A web based platform which will allow users to create a digital version of their Magic: The Gathering trading card collection and turn them into digital trade binders, allowing players to easily and efficiently trade cards with each other."
+          description="A platform for MTG players to create a digital version of their Magic: The Gathering trading card collection and turn them into digital trade binders, allowing players to easily and efficiently trade cards with each other."
         />
       </div>
 
@@ -44,6 +44,11 @@ export default function Page() {
         ></iframe>
         <iframe
           src="https://itch.io/embed/2634398?dark=true"
+          width="552"
+          height="167"
+        ></iframe>
+        <iframe
+          src="https://itch.io/embed/3294469?dark=true"
           width="552"
           height="167"
         ></iframe>
