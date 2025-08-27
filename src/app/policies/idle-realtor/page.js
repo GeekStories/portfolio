@@ -22,7 +22,14 @@ export default function PrivacyPolicy() {
       <h2>Contact</h2>
       <p>
         If you have any questions about this privacy policy, please{" "}
-        <a href="www.damonpitkethley.com/contact"> contact me</a>.
+        <a
+          style={{ color: "blue", textDecoration: "underline" }}
+          href="https://damonpitkethley.com/contact"
+        >
+          {" "}
+          contact me
+        </a>
+        .
       </p>
     </main>
   );
