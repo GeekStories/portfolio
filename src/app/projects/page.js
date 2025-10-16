@@ -3,7 +3,11 @@ import { BiSolidArrowToRight } from "react-icons/bi";
 function WebsiteCard({ title, link, linkText, description }) {
   return (
     <div className="text-neutral-900 w-1/4 flex flex-col gap-2 p-2 ">
-      <h1 className="font-bold text-3xl underline"><a href={link} target="_blank">{title}</a></h1>
+      <h1 className="font-bold text-3xl underline">
+        <a href={link} target="_blank">
+          {title}
+        </a>
+      </h1>
       {/* <a className="projectLink" href={link} target="_blank">
         Visit {linkText.toLowerCase()} <BiSolidArrowToRight size="1rem" />
       </a> */}
@@ -19,7 +23,7 @@ export default function Page() {
       <div className="flex flex-wrap w-full justify-center gap-2 border-t-2 border-black p-2">
         <WebsiteCard
           title="Trades Folder"
-          link="https://tradesfolder.com"
+          link="https://tradesfolder.damonpitkethley.com"
           linkText="tradesfolder.com"
           description="A platform for MTG players to create a digital version of their Magic: The Gathering trading card collection and turn them into digital trade binders, allowing players to easily and efficiently trade cards with each other."
         />
