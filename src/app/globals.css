@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -35,7 +33,7 @@ body {
 }
 
 .formInput {
-  @apply p-2 rounded font-mono font-medium focus:outline-none focus:border-b-2 focus:ring-0 bg-blue-50 border-b-[1px] border-black;
+  @apply p-2 rounded font-mono font-medium focus:outline-none focus:border-b-2 focus:ring-0 bg-blue-50 border-b border-black;
 }
 
 .inputLabel {
