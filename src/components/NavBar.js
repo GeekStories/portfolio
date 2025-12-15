@@ -37,10 +37,6 @@ const NavLinks = [
 ];
 const SocialLinks = [
   {
-    href: "https://twitter.com/geek_stories",
-    icon: <AiOutlineTwitter size={SocialIconSize} />,
-  },
-  {
     href: "https://www.linkedin.com/in/damon-pitkethley",
     icon: <AiOutlineLinkedin size={SocialIconSize} />,
   },
@@ -55,7 +51,7 @@ export default function NavBar() {
 
   return (
     <div className="flex flex-col w-1/3 mx-auto">
-      <div className="flex gap-2 justify-center border-b-[1px] p-2">
+      <div className="flex gap-2 justify-center border-b p-2">
         <Link
           href="/"
           className={`navLink ${
