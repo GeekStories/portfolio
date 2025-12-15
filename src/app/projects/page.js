@@ -27,9 +27,18 @@ export default function Page() {
           linkText="tradesfolder.com"
           description="A platform for MTG players to create a digital version of their Magic: The Gathering trading card collection and turn them into digital trade binders, allowing players to easily and efficiently trade cards with each other."
         />
+
+        <WebsiteCard
+          title="Project Lemons"
+          link="https://playlemons.com"
+          linkText="playlemons.com"
+          description="A cozy lemonade stand economy simulator about about reading the map, understanding demand, and out-thinking your competitors. Start small with a single stand on a street corner. Manage your margins, and try to turn a profit. "
+        />
       </div>
 
-      <h1 className="sectionTitle">Games</h1>
+      <h1 className="sectionTitle">
+        <s>Projects</s> <i>Prototypes</i>
+      </h1>
       <div className="projectsBoxWrapper">
         <iframe
           src="https://itch.io/embed/2971026?dark=true"
