@@ -27,10 +27,6 @@ const NavLinks = [
 ];
 const SocialLinks = [
   {
-    href: "https://www.linkedin.com/in/damon-pitkethley",
-    icon: <AiOutlineLinkedin size={SocialIconSize} />,
-  },
-  {
     href: "https://github.com/geekStories",
     icon: <AiOutlineGithub size={SocialIconSize} />,
   },
