@@ -2,14 +2,8 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import {
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-  AiOutlineTwitter,
-} from "react-icons/ai";
+import { AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
 import { FaGraduationCap } from "react-icons/fa";
-
-import { CgFeed } from "react-icons/cg";
 import { SiMinutemailer } from "react-icons/si";
 import { CgDisplayGrid } from "react-icons/cg";
 import { RiHomeLine } from "react-icons/ri";
@@ -25,10 +19,6 @@ const NavLinks = [
   {
     href: "/edu",
     icon: <FaGraduationCap size={NavIconSize} />,
-  },
-  {
-    href: "/blog",
-    icon: <CgFeed size={NavIconSize} />,
   },
   {
     href: "/contact",

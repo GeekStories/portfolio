@@ -6,7 +6,7 @@ import { z } from "zod";
 
 const schema = z.object({
   subject: z.string(),
-  email: z.string().email(),
+  email: z.email(),
   message: z.string().min(1),
   title: z.string().optional(),
 });
@@ -20,16 +20,16 @@ export async function SubmitForm(prevState: any, formData: FormData) {
   });
 
   try {
-    if(!data.title) {
+    if (!data.title) {
       await pool.query(
         "INSERT INTO messages(subject, email, message) VALUES($1, $2, $3)",
-        [data.subject, data.email, data.message]
+        [data.subject, data.email, data.message],
       );
     }
 
     revalidatePath("/contact");
     return { message: "Message sent successfully" };
-  } catch (error) {
+  } catch (error: any) {
     return {
       message: "Failed to send message. Refresh and try again.",
       error: error.message,

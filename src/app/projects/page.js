@@ -24,6 +24,13 @@ export default function Page() {
         />
 
         <WebsiteCard
+          title="Price Compare"
+          link="https://pricecompare.nz"
+          linkText="pricecompare.com"
+          description="A basket comparison tool to compare the price of basics across different supermarket. The goal is to make it easier for people to find the best deals and save money on their grocery shopping."
+        />
+
+        <WebsiteCard
           title="Project Lemons"
           link="https://playlemons.com"
           linkText="playlemons.com"
@@ -37,6 +44,11 @@ export default function Page() {
       <div className="projectsBoxWrapper">
         <iframe
           src="https://itch.io/embed/2971026?dark=true"
+          width="552"
+          height="167"
+        ></iframe>
+        <iframe
+          src="https://itch.io/embed/4116478?dark=true"
           width="552"
           height="167"
         ></iframe>
@@ -57,12 +69,6 @@ export default function Page() {
         ></iframe>
         <iframe
           src="https://itch.io/embed/3294469?dark=true"
-          width="552"
-          height="167"
-        ></iframe>
-        <iframe
-          frameborder="0"
-          src="https://itch.io/embed/4116478?dark=true"
           width="552"
           height="167"
         ></iframe>

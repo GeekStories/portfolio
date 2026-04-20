@@ -17,11 +17,11 @@ export default function Page() {
     },
     {
       id: 3,
-      title: "Bachelor of Information Science",
-      institution: "Massey University",
+      title: "Bachelor of Software Engineering",
+      institution: "Media Design School",
       institution_link:
-        "https://www.massey.ac.nz/study/all-qualifications-and-degrees/bachelor-of-information-sciences-UBINS/",
-      date: "Feb 2025 - Nov 2027",
+        "https://www.mediadesignschool.com/courses/undergraduate-studies/bachelor-software-engineering-game-programming",
+      date: "Jul 2026 - Jun 2027 (expected)",
     },
   ];
   return (
@@ -36,7 +36,11 @@ export default function Page() {
               <h3 className="text-xl font-semibold">{edu.title}</h3>
               <span>
                 {edu?.institution_link ? (
-                  <a href={edu.institution_link} target="_blank" className="text-gray-600">
+                  <a
+                    href={edu.institution_link}
+                    target="_blank"
+                    className="text-gray-600"
+                  >
                     {edu.institution}
                   </a>
                 ) : (
