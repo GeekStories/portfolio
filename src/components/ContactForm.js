@@ -12,13 +12,23 @@ const initialState = {
 function SubmitButton({ pending }) {
   if (!pending)
     return (
-      <button
-        className="w-full font-medium sm:w-3/4 lg:w-1/3 mx-auto bg-neutral-900 text-white py-3 hover:cursor-pointer rounded"
-        type="submit"
-        aria-disabled={pending}
-      >
-        Send Message
-      </button>
+      <>
+        <button
+          className="w-full font-medium sm:w-3/4 lg:w-1/3 mx-auto bg-neutral-900 text-white py-3 hover:cursor-pointer rounded"
+          type="submit"
+          aria-disabled={pending}
+        >
+          Send Message
+        </button>
+        <br />
+        OR flick me an email at{" "}
+        <a
+          href="mailto:contact@damonpitkethley.com"
+          className="text-blue-500 hover:underline"
+        >
+          contact@damonpitkethley.com
+        </a>
+      </>
     );
 
   if (pending)
@@ -37,7 +47,7 @@ function FormItem({ children }) {
 export default function Form() {
   const [state, formAction, isPending] = useActionState(
     SubmitForm,
-    initialState
+    initialState,
   );
 
   return (

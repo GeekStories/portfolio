@@ -1,6 +1,4 @@
-import { BiSolidArrowToRight } from "react-icons/bi";
-
-function WebsiteCard({ title, link, linkText, description }) {
+function WebsiteCard({ title, link, description }) {
   return (
     <div className="text-neutral-900 w-1/4 flex flex-col gap-2 p-2 ">
       <h1 className="font-bold text-3xl underline">
@@ -8,9 +6,6 @@ function WebsiteCard({ title, link, linkText, description }) {
           {title}
         </a>
       </h1>
-      {/* <a className="projectLink" href={link} target="_blank">
-        Visit {linkText.toLowerCase()} <BiSolidArrowToRight size="1rem" />
-      </a> */}
       <p className="text-neutral-900 font-mono p-1">{description}</p>
     </div>
   );
